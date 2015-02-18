@@ -1,0 +1,7 @@
+name             'opsworks-wordpress'
+maintainer       'YOUR_NAME'
+maintainer_email 'YOUR_EMAIL'
+license          'All rights reserved'
+description      'Installs/Configures opsworks-wordpress'
+long_description 'Installs/Configures opsworks-wordpress'
+version          '0.1.0'

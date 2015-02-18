@@ -1,0 +1,16 @@
+server {
+  listen 80;
+  server_name <%= @application[:domains].join(" ") %> <%= node[:hostname] %>;
+
+  keepalive_timeout 5;
+
+  root <%= @application[:deploy_to] %>/shared/wordpress;
+  index index.php index.html index.htm;
+
+  <% if @application[:nginx] && @application[:nginx][:client_max_body_size] %>
+    client_max_body_size <%= @application[:nginx][:client_max_body_size] %>;
+  <% end %>
+
+  include global/restrictions.conf;
+  include global/wordpress.conf;
+}

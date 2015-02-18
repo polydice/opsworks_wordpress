@@ -1,7 +1,10 @@
-name             'opsworks-wordpress'
-maintainer       'YOUR_NAME'
-maintainer_email 'YOUR_EMAIL'
+name             'opsworks_wordpress'
+maintainer       'Richard Lee'
+maintainer_email 'rl@polydice.com'
 license          'All rights reserved'
-description      'Installs/Configures opsworks-wordpress'
-long_description 'Installs/Configures opsworks-wordpress'
+description      'Installs and configures WordPress on OpsWorks'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.1.0'
+
+depends 'hhvm'
+depends 'openssl'

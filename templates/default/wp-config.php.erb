@@ -1,0 +1,26 @@
+<?php
+define("DB_NAME", '<%= @database[:database] || node['wordpress']['db']['name'] %>');
+define("DB_USER", '<%= @database[:username] || node['wordpress']['db']['user'] %>');
+define("DB_PASSWORD", '<%= @database[:password] || node['wordpress']['db']['password'] %>');
+define("DB_HOST", '<%= @database[:host] || node['wordpress']['db']['host'] %>');
+define("DB_CHARSET", '<%= @database[:encoding] || node['wordpress']['db']['charset'] %>');
+
+define('AUTH_KEY',         '<%= node['wordpress']['keys']['auth'] %>');
+define('SECURE_AUTH_KEY',  '<%= node['wordpress']['keys']['secure_auth'] %>');
+define('LOGGED_IN_KEY',    '<%= node['wordpress']['keys']['logged_in'] %>');
+define('NONCE_KEY',        '<%= node['wordpress']['keys']['nonce'] %>');
+define('AUTH_SALT',        '<%= node['wordpress']['salt']['auth'] %>');
+define('SECURE_AUTH_SALT', '<%= node['wordpress']['salt']['secure_auth'] %>');
+define('LOGGED_IN_SALT',   '<%= node['wordpress']['salt']['logged_in'] %>');
+define('NONCE_SALT',       '<%= node['wordpress']['salt']['nonce'] %>');
+
+$table_prefix  = "<%= node['wordpress']['db']['prefix'] %>";
+
+define("WPLANG", "<%= node['wordpress']['lang'] %>");
+define("WP_DEBUG", false);
+
+define("DISABLE_WP_CRON", true);
+
+if ( !defined("ABSPATH") )
+  define("ABSPATH", dirname(__FILE__) . "/");
+require_once(ABSPATH . "wp-settings.php");

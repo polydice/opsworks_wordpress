@@ -1,3 +1,3 @@
 # 0.1.0
 
-Initial release of opsworks-wordpress
+Initial release of opsworks_wordpress

@@ -1,42 +1,22 @@
-# opsworks-wordpress-cookbook
+# opsworks_wordpress
 
-TODO: Enter the cookbook description here.
+Chef cookbook for deploying WordPress to OpsWorks.
 
 ## Supported Platforms
 
-TODO: List your supported platforms.
+This cookbook is developed and test under Ubuntu 14.04. It should also work on other Linux platform, and please file issues if you get any problems.
 
-## Attributes
+## OpsWorks Only?
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['opsworks-wordpress']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+Though this cookbook is created to be used in AWS OpsWorks, environment setup cookbook (i.e. `opsworks_wordpress::default`) recipe could be used in normal chef environment.
 
-## Usage
+## Recipes
 
-### opsworks-wordpress::default
-
-Include `opsworks-wordpress` in your node's `run_list`:
-
-```json
-{
-  "run_list": [
-    "recipe[opsworks-wordpress::default]"
-  ]
-}
-```
+* `opsworks_wordpress::default` - Install HHVM / NGINX, add NGINX shared configs and set up crontab for wp-cron.
+* `opsworks_wordpress::deploy` - Download WordPress's latest version, set up NGINX site config, symlink wp-content from current deploy version of app to shared WordPress installation.
 
 ## License and Authors
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Author: Richard Lee (rl@polydice.com)
+
+License: Apache
